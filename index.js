@@ -70,12 +70,12 @@ var sourceDate;
             req.open('GET', sundaysLink[i], false);
             req.send(null);
             if (req.status === 200) {
-            let coinMacroLocation = $('<div/>').html(req.responseText).find('tbody');
+            let coinMacroLocation = $('<div/>').html(req.responseText).find("#currencies-all > tbody");
 
             //for each coin for a working link (until a coin has no data, then break)
              for (var l = 0, m = coins.length; l < m; l++){
                 //start constructing array of prices
-                let data = $('<div/>').html(coinMacroLocation).find('#id-' + coins[l]).children('.no-wrap.text-right').find(".price").data("usd");
+                let data = $('<div/>').html(coinMacroLocation).find('#id-' + coins[l]+ ' > td:nth-child(5) > a').data("usd");;
 
                     if (data === undefined) {
                         sourceDate = sundays[i];
