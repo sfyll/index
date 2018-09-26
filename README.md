@@ -1,2 +1,2 @@
 # index
-automatic altcoin index creation
+automatic altcoin index creation using coinmarketcap
